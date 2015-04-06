@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang = "eng">
+  <head>
+    <meta charset = "UTF-8">
+    <title></title>
+  </head>
+  <body>
+  <main id = "content"></main>
+
+  <script>
+
+    var DonutShop = function(name, min, max, avg) {
+      this.name = name;
+      this.min = min;
+      this.max = max;
+      this.avg = avg;
+      this.hours = [];
+      this.totalDonuts = 0;
+
+      this.processing()
+    };
+
+    DonutShop.prototype.processing = function(){
+      for (var i = 0; i < 11; i++) {
+        customer = Math.ceil(this.customers());
+        this.totalDonuts += customer;
+        this.hours.push(customer)
+      }
+    console.log(this.hours);
+    console.log(this.totalDonuts);
+    }
+
+    DonutShop.prototype.customers = function() {
+      var customer = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+      return customer * this.avg;
+    };
+
+    var downtown = new DonutShop('Downtown', 8, 43, 4.5);
+    var capitalHill = new DonutShop('Capital Hill', 4, 37, 2.0);
+    var southLakeUnion = new DonutShop('South Lake Union', 9, 23, 6.33);
+    var wedgewood = new DonutShop('Wedgewood', 2, 28, 1.25);
+    var ballard = new DonutShop('Ballard', 8, 58, 3.75);
+
+DonutShop.prototype.render = function() {
+  var el = document.createElement('table')
+  el.innerHTML= '<tr><th>' + this.name +'</th>'+ '<td>'+ this.hourly[0]+'</td>'
+
+}
+
+/*User.prototype.render = function() {
+    var el = document.createElement('span');
+    el.innerHTML = this.name;
+    return el;
+
+
+  Comment.prototype.render = function(text, author) {
+    var el = document.createElement('p');
+    el.innerText = this.text;
+    el.appendChild(this.author.render());
+    return el;
+  };
+
+
+  Post.prototype.render = function() {
+    var el = document.createElement('article');
+    el.innerHTML = '<h1>Blog Post</h1>';
+
+    console.log(totalDonuts)*/
+
+
+
+
+  </script>
+  </body>
+</html>
