@@ -8,8 +8,9 @@
   <main></main>
   <table>
     <tr id="time">
+      <th></th>
 
-      <td></td>
+
       <td>7:00 AM</td>
       <td>8:00 AM</td>
       <td>9:00 AM</td>
@@ -23,15 +24,23 @@
       <td>5:00 PM</td>
       <td>6:00 PM</td>
     </tr>
-    <tr id = "Downtown">Downtown</tr>
+    <tr id = "Downtown">
+    <th>Downtown</th>
+    </tr>
+    <tr id= "Capitol Hill">
+<th>Capitol Hill</th>
+    </tr>
 
-    <tr id= "Capital Hill">Capital Hill</tr>
+    <tr id="South Lake Union">
+      <th>South Lake Union</th>
+    </tr>
 
-    <tr id="South Lake Union">South Lake Union</tr>
+    <tr id="Wedgewood">
+      <th>Wedgewood </th></tr>
 
-    <tr id="Wedgewood">Wedgewood</tr>
-
-    <tr id="Ballard">Ballard</tr>
+    <tr id="Ballard">
+      <th>Ballard</th>
+    </tr>
 
   </table>
 
@@ -57,8 +66,6 @@
         this.totalDonuts += customer;
         this.hours.push(customer)
       }
-    console.log(this.hours);
-    console.log(this.totalDonuts);
     }
 
     DonutShop.prototype.customers = function() {
@@ -78,7 +85,7 @@
   };
 
     var downtown = new DonutShop('Downtown', 8, 43, 4.5);
-    var capitalHill = new DonutShop('Capital Hill', 4, 37, 2.0);
+    var capitolHill = new DonutShop('Capitol Hill', 4, 37, 2.0);
     var southLakeUnion = new DonutShop('South Lake Union', 9, 23, 6.33);
     var wedgewood = new DonutShop('Wedgewood', 2, 28, 1.25);
     var ballard = new DonutShop('Ballard', 8, 58, 3.75);
