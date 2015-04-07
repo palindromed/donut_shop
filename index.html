@@ -5,7 +5,37 @@
     <title></title>
   </head>
   <body>
-  <main id = "content"></main>
+  <main></main>
+  <table>
+    <tr id="time">
+
+      <td></td>
+      <td>7:00 AM</td>
+      <td>8:00 AM</td>
+      <td>9:00 AM</td>
+      <td>10:00 AM</td>
+      <td>11:00 AM</td>
+      <td>12 NOON</td>
+      <td>1:00 PM</td>
+      <td>2:00 PM</td>
+      <td>3:00 PM</td>
+      <td>4:00 PM</td>
+      <td>5:00 PM</td>
+      <td>6:00 PM</td>
+    </tr>
+    <tr id = "Downtown">Downtown</tr>
+
+    <tr id= "Capital Hill">Capital Hill</tr>
+
+    <tr id="South Lake Union">South Lake Union</tr>
+
+    <tr id="Wedgewood">Wedgewood</tr>
+
+    <tr id="Ballard">Ballard</tr>
+
+  </table>
+
+
 
   <script>
 
@@ -18,6 +48,7 @@
       this.totalDonuts = 0;
 
       this.processing()
+      this.render();
     };
 
     DonutShop.prototype.processing = function(){
@@ -35,38 +66,22 @@
       return customer * this.avg;
     };
 
+
+      DonutShop.prototype.render = function() {
+        var el = document.getElementById(this.name);
+      for (var i = 0; i < this.hours.length; i++) {
+        var elTd = document.createElement('td');
+        elTd.textContent = this.hours[i];
+        el.appendChild(elTd);
+    }
+
+  };
+
     var downtown = new DonutShop('Downtown', 8, 43, 4.5);
     var capitalHill = new DonutShop('Capital Hill', 4, 37, 2.0);
     var southLakeUnion = new DonutShop('South Lake Union', 9, 23, 6.33);
     var wedgewood = new DonutShop('Wedgewood', 2, 28, 1.25);
     var ballard = new DonutShop('Ballard', 8, 58, 3.75);
-
-DonutShop.prototype.render = function() {
-  var el = document.createElement('table')
-  el.innerHTML= '<tr><th>' + this.name +'</th>'+ '<td>'+ this.hourly[0]+'</td>'
-
-}
-
-/*User.prototype.render = function() {
-    var el = document.createElement('span');
-    el.innerHTML = this.name;
-    return el;
-
-
-  Comment.prototype.render = function(text, author) {
-    var el = document.createElement('p');
-    el.innerText = this.text;
-    el.appendChild(this.author.render());
-    return el;
-  };
-
-
-  Post.prototype.render = function() {
-    var el = document.createElement('article');
-    el.innerHTML = '<h1>Blog Post</h1>';
-
-    console.log(totalDonuts)*/
-
 
 
 
