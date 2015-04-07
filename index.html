@@ -7,10 +7,9 @@
   <body>
   <main></main>
   <table>
+    <tbody>
     <tr id="time">
       <th></th>
-
-
       <td>7:00 AM</td>
       <td>8:00 AM</td>
       <td>9:00 AM</td>
@@ -23,28 +22,10 @@
       <td>4:00 PM</td>
       <td>5:00 PM</td>
       <td>6:00 PM</td>
+      <td>Daily Total</td>
     </tr>
-    <tr id = "Downtown">
-    <th>Downtown</th>
-    </tr>
-    <tr id= "Capitol Hill">
-<th>Capitol Hill</th>
-    </tr>
-
-    <tr id="South Lake Union">
-      <th>South Lake Union</th>
-    </tr>
-
-    <tr id="Wedgewood">
-      <th>Wedgewood </th></tr>
-
-    <tr id="Ballard">
-      <th>Ballard</th>
-    </tr>
-
+   </tbody>
   </table>
-
-
 
   <script>
 
@@ -61,7 +42,7 @@
     };
 
     DonutShop.prototype.processing = function(){
-      for (var i = 0; i < 11; i++) {
+      for (var i = 0; i <= 11; i++) {
         customer = Math.ceil(this.customers());
         this.totalDonuts += customer;
         this.hours.push(customer)
@@ -75,13 +56,21 @@
 
 
       DonutShop.prototype.render = function() {
-        var el = document.getElementById(this.name);
+
+        var el = document.getElementsByTagName('tbody')[0];
+        var elMk = document.createElement('tr');
+        var elHead = document.createElement('th');
+        elHead.textContent = this.name;
+        el.appendChild(elMk);
+        elMk.appendChild(elHead);
       for (var i = 0; i < this.hours.length; i++) {
         var elTd = document.createElement('td');
         elTd.textContent = this.hours[i];
-        el.appendChild(elTd);
+        elMk.appendChild(elTd);
     }
-
+    elTd = document.createElement('td');
+    elTd.textContent = this.totalDonuts;
+    elMk.appendChild(elTd);
   };
 
     var downtown = new DonutShop('Downtown', 8, 43, 4.5);
