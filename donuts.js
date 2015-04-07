@@ -41,6 +41,7 @@ DonutShop.prototype.render = function() {
   elMk.appendChild(elTd);
 };
 
+var array = []
 var downtown = new DonutShop('Downtown', 8, 43, 4.5);
 var capitolHill = new DonutShop('Capitol Hill', 4, 37, 2.0);
 var southLakeUnion = new DonutShop('South Lake Union', 9, 23, 6.33);
