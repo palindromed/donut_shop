@@ -1,0 +1,19 @@
+body {
+  font-family: 'Roboto Slab', sans-serif;
+  background-image: url("doughnut1.jpg");
+  color: #000000;
+}
+
+h1 {
+  color: #FF7474;
+
+}
+
+input {
+  background-color: #FFA49D;
+  color: #;
+}
+button {
+  background-color: #FF476C;
+}
+

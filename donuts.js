@@ -33,11 +33,16 @@
   };
 
   var existingShops = function() {
-    array[0] = new DonutShop({shop: 'Downtown', min: 8, max: 43, avg: 4.5});
-    array[1] = new DonutShop({shop :'Capitol Hill', min: 4, max: 37, avg: 2.0});
-    array[2] = new DonutShop({shop :'South Lake Union', min: 9, max: 23, avg: 6.33});
-    array[3] = new DonutShop({shop:'Wedgewood', min: 2, max: 28, avg: 1.25});
-    array[4] = new DonutShop({shop:'Ballard', min: 8, max: 58, avg: 3.75});
+    if (array.length === 0) {
+      array[0] = new DonutShop({shop: 'Downtown', min: 8, max: 43, avg: 4.5});
+      array[1] = new DonutShop({shop :'Capitol Hill', min: 4, max: 37, avg: 2.0});
+      array[2] = new DonutShop({shop :'South Lake Union', min: 9, max: 23, avg: 6.33});
+      array[3] = new DonutShop({shop:'Wedgewood', min: 2, max: 28, avg: 1.25});
+      array[4] = new DonutShop({shop:'Ballard', min: 8, max: 58, avg: 3.75});
+    }
+    else {
+      return;
+    }
   };
 
   newShopForm.addEventListener('submit', handleNewShop);
