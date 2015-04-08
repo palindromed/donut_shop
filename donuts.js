@@ -1,51 +1,44 @@
-var DonutShop = function(name, min, max, avg) {
-      this.name = name;
-      this.min = min;
-      this.max = max;
-      this.avg = avg;
-      this.hours = [];
-      this.totalDonuts = 0;
+(function() {
+  var newShopForm = document.getElementById('new-shop-form');
+  var shop = document.getElementById('shop');
+  var minimum = document.getElementById('minimum');
+  var maximum = document.getElementById('maximum');
+  var average = document.getElementById('average');
+  var array = []
 
-      this.processing()
-      this.render();
-};
+  var handleNewShop = function(event){
+    event.preventDefault();
+    existingShops();
 
-DonutShop.prototype.processing = function(){
-  for (var i = 0; i <= 11; i++) {
-    customer = Math.ceil(this.customers());
-    this.totalDonuts += customer;
-    this.hours.push(customer)
-  }
-}
+    var newShop = new DonutShop({shop: event.target.shop.value, min: event.target.minimum.value, max: event.target.maximum.value, avg: event.target.average.value});
 
-DonutShop.prototype.customers = function() {
-  var customer = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-  return customer * this.avg;
-};
+    event.target.shop.value = null;
+    event.target.minimum.value = null;
+    event.target.maximum.value = null;
+    event.target.average.value = null;
+    array.push(newShop);
+  };
 
+  DonutShop.prototype.processing = function(){
+    for (var i = 0; i <= this.hoursOpen; i++) {
+      customer = Math.ceil(this.customers());
+      this.totalDonuts += customer;
+      this.hours.push(customer)
+    }
+  };
 
-DonutShop.prototype.render = function() {
-  var el = document.getElementsByTagName('tbody')[0];
-  var elMk = document.createElement('tr');
-  var elHead = document.createElement('th');
-  elHead.textContent = this.name;
-  el.appendChild(elMk);
-  elMk.appendChild(elHead);
-  for (var i = 0; i < this.hours.length; i++) {
-    var elTd = document.createElement('td');
-    elTd.textContent = this.hours[i];
-    elMk.appendChild(elTd);
-  }
-  elTd = document.createElement('td');
-  elTd.textContent = this.totalDonuts;
-  elMk.appendChild(elTd);
-};
+  DonutShop.prototype.customers = function() {
+    var customer = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+    return customer * this.avg;
+  };
 
-var array = []
-var downtown = new DonutShop('Downtown', 8, 43, 4.5);
-var capitolHill = new DonutShop('Capitol Hill', 4, 37, 2.0);
-var southLakeUnion = new DonutShop('South Lake Union', 9, 23, 6.33);
-var wedgewood = new DonutShop('Wedgewood', 2, 28, 1.25);
-var ballard = new DonutShop('Ballard', 8, 58, 3.75);
+  var existingShops = function() {
+    array[0] = new DonutShop({shop: 'Downtown', min: 8, max: 43, avg: 4.5});
+    array[1] = new DonutShop({shop :'Capitol Hill', min: 4, max: 37, avg: 2.0});
+    array[2] = new DonutShop({shop :'South Lake Union', min: 9, max: 23, avg: 6.33});
+    array[3] = new DonutShop({shop:'Wedgewood', min: 2, max: 28, avg: 1.25});
+    array[4] = new DonutShop({shop:'Ballard', min: 8, max: 58, avg: 3.75});
+  };
 
-
+  newShopForm.addEventListener('submit', handleNewShop);
+})();

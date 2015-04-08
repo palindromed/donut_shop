@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang = "eng">
+<html lang = "en">
   <head>
     <meta charset = "UTF-8">
     <title></title>
   </head>
   <body>
-  <main></main>
+  <main>
+    <form id ="new-shop-form">
+      <label for= "shop">Enter Name of New Shop</label>
+      <input id = "shop" type = "text">
+      <label for = "minimum">Minimum Customers Per Hour</label>
+      <input id="minimum" type = "number">
+      <label for = "maximum">Maximum Customers Per Hour</label>
+      <input id="maximum" type="number">
+      <label for ="average">Average Donuts Per Customer</label>
+      <input id= "average" type = "number">
+      <button type = "submit">Create Shop</button>
+    </form>
+  </main>
   <table>
     <tbody>
     <tr id="time">
@@ -26,7 +38,7 @@
     </tr>
    </tbody>
   </table>
-
+<script type="text/javascript" src = " newShop.js"></script>
   <script type="text/javascript" src="donuts.js"></script>
   </body>
 </html>
