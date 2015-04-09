@@ -1,0 +1,52 @@
+body {
+  font-family: 'Roboto Slab', sans-serif;
+  background-image: url("doughnut1.jpg");
+  color: #000000;
+}
+
+h1 {
+  color: #FF7474;
+  background-color: #A8877E;
+  text-align: center;
+
+}
+form {
+  background-color: #A8877E;
+  border-spacing: 1px;
+  color: #000000;
+}
+
+input {
+  background-color: #FFA49D;
+  color: #;
+  padding: 5px 5px;
+  margin: 5px auto;
+  border: 0 none;
+  border-radius: 3px;
+}
+button {
+  background-color: #FF476C;
+  display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    margin: 10px auto;
+    border: 0 none;
+    border-radius: 3px;
+}
+button:hover {
+   background-color: #FFA49D;
+}
+table {
+  background-color: #FF7474;
+}
+td {
+  background-color: #FF7474;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 2px 2px;
+  margin: 3px auto;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+}
