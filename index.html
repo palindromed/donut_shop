@@ -4,27 +4,39 @@
     <meta charset="UTF-8">
     <title>Donut Shops</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="restyle.css">
   </head>
+  <div id="header">
+  <h1>Create a Donut Shop</h1>
+  </div>
+
+  <div id="mains"></div>
   <body>
-    <h1>Create a Donut Shop</h1>
-     <p>Enter the Minimum and maximum number of customers per hour and
+
+  <p id="paragraph">Enter the Minimum and maximum number of customers per hour and
       the average number of donuts per customer to see how many donuts
       you need to make per hour and per day for each location!</p>
+
+
+      <img src="donutman.jpg" id="picture" class="clear">
   <main>
     <form id="new-shop-form">
       <label for="shop">Enter Name of New Shop</label>
       <input id="shop" type="text" placeholder="NAME">
+      <div id="name"></div>
       <label for="minimum">Minimum Customers Per Hour</label>
       <input id="minimum" type="number" placeholder="MINIMUM">
+      <div id="min"></div>
       <label for="maximum">Maximum Customers Per Hour</label>
       <input id="maximum" type="number" placeholder="MAXIMUM">
+      <div id="max"></div>
       <label for="average">Average Donuts Per Customer</label>
       <input id="average" type = "number" placeholder="AVERAGE">
+      <div id="avg"></div>
       <button type="submit">Create Shop</button>
     </form>
 
-  </main>
+<div id="tables"></div>
   <table>
     <tbody>
     <tr id="time">
@@ -45,7 +57,7 @@
     </tr>
    </tbody>
   </table>
-
+</main>
   <script type="text/javascript" src ="newShop.js"></script>
   <script type="text/javascript" src="donuts.js"></script>
   </body>
