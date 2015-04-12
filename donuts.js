@@ -8,9 +8,12 @@
 
   var handleNewShop = function(event){
     event.preventDefault();
+
     existingShops();
 
-    var newShop = new DonutShop({shop: event.target.shop.value, min: event.target.minimum.value, max: event.target.maximum.value, avg: event.target.average.value});
+    var newShop = new DonutShop({shop: event.target.shop.value, min:
+    event.target.minimum.value, max: event.target.maximum.value, avg:
+    event.target.average.value});
 
     event.target.shop.value = null;
     event.target.minimum.value = null;
