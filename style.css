@@ -6,19 +6,31 @@ body {
   background-image: url("doughnut1.jpg");
 }
 #header {
+  height: 1em;
+}
+#O{
   position: fixed;
 
+}
+.stage {
+  background: #eaeaed;
+  border-radius: 6px;
+  height: 150px;
+  position: relative;
+  min-width: 538px;
 }
 #mains {
   height: 8em;
 }
 h1 {
-  width: 370%;
+  width: 90%;
+  height: 10%;
   color: #FF7474;
   text-align: center;
   background-color: #A8877E;
   border-radius: 15%;
-  transform: perspective(200px) rotateX(30deg);
+  margin: 0 auto;
+
 }
 #paragraph, #picture, #new-shop-form {
   display: inline-block;
@@ -39,14 +51,8 @@ p {
   -webkit-border-radius: 5%;
   text-align: left;
 }
-.text{
 
-}
-.image:hover{
-  -webkit-transform: rotateZ(-40deg);
-  -ms-transform: rotateZ(-40deg);
-  transform: rotateZ(-40deg);
-}
+
 #name, #min, #max, #avg {
   height: 1em;
 }
@@ -57,7 +63,7 @@ form {
   font-size: 1em;
 }
 form:hover{
-        box-shadow: inset 0 0 0 15px #FF7474;
+        box-shadow: inset 0 0 0 10px #FF7474;
 
 }
 input {
@@ -88,9 +94,10 @@ button:hover {
 }
 #tables{
   height: 20em;
+
 }
 table {
-
+  position: absolute;
   background-color: #FF7474;
   margin: 2em auto;
   text-align: right;
